@@ -1,0 +1,229 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Arepa De Checho | Tradición y Sabor Artesanal</title>
+    <link rel="stylesheet" href="arepa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navegación Fija -->
+    <nav class="navbar">
+        <a href="#inicio" class="logo">🫓 La Arepa De <span>Checho</span></a>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#pagos">Pagos QR</a></li>
+            <li><a href="#empresa">Empresa</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li class="cart-trigger" onclick="toggleModal('cart-modal')">
+                <i class="fas fa-shopping-basket"></i>
+                <span id="cart-count">0</span>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="inicio" class="hero">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1>La Arepa de <span>Checho</span></h1>
+                <p class="slogan">"Más que arepas, un deleite en cada bocado"</p>
+                <p class="welcome-text">Te damos la más cordial bienvenida a Las Arepas de Checho, donde encontrarás una amplia variedad de arepas rellenas con ingredientes frescos y el auténtico sabor tradicional paisa.</p>
+                <a href="#menu" class="btn-main">HACER PEDIDO</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección Menú: 3 Arepas en 1 Sola Fila -->
+    <section id="menu" class="container">
+        <h2 class="section-title">Nuestras Arepas Estrella</h2>
+        <div id="menu-grid-arepas" class="menu-grid-3">
+            <div class="menu-card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">⭐ Más Vendida</span>
+                    <img src="../img/images.img" alt="Arepollo" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-header-info">
+                        <h3 class="card-title">Arepollo</h3>
+                        <span class="price">$12.000</span>
+                    </div>
+                    <p class="card-desc">Pollo desmechado premium, maíz tierno dulce y queso fundido.</p>
+                    <div class="card-btns">
+                        <button class="btn-info" onclick="openDetails('arepollo')">Detalles</button>
+                        <button class="btn-buy" onclick="addToCart('arepollo', 1)">Añadir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">🧀 Tradicional</span>
+                    <img src="../img/areta2.svg" alt="Clásica" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-header-info">
+                        <h3 class="card-title">Clásica</h3>
+                        <span class="price">$12.000</span>
+                    </div>
+                    <p class="card-desc">Mantequilla artesanal de campo y abundante queso campesino fresco.</p>
+                    <div class="card-btns">
+                        <button class="btn-info" onclick="openDetails('clasica')">Detalles</button>
+                        <button class="btn-buy" onclick="addToCart('clasica', 1)">Añadir</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <div class="card-img-wrapper">
+                    <span class="card-badge">🔥 Especial</span>
+                    <img src="../img/areta3.svg" alt="Despechada" class="card-img">
+                </div>
+                <div class="card-body">
+                    <div class="card-header-info">
+                        <h3 class="card-title">Despechada</h3>
+                        <span class="price">$12.000</span>
+                    </div>
+                    <p class="card-desc">Carne desmechada cocinada con hogao tradicional paisa y queso campesino.</p>
+                    <div class="card-btns">
+                        <button class="btn-info" onclick="openDetails('despechada')">Detalles</button>
+                        <button class="btn-buy" onclick="addToCart('despechada', 1)">Añadir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Métodos de Pago y Código QR -->
+    <section id="pagos" class="container" style="background:#fffdf9; border-radius:20px; border:1px solid #e2e8f0; margin-bottom:50px; text-align:center;">
+        <h2 class="section-title">Métodos de Pago &amp; Código QR</h2>
+        <p style="color:#64748b; margin-bottom:20px;">Transfiere fácilmente desde tu app de Nequi o Bancolombia escaneando nuestro código QR:</p>
+        <div style="display:inline-block; background:white; padding:20px; border-radius:15px; border:2px dashed #f59e0b; box-shadow:0 4px 15px rgba(0,0,0,0.06);">
+            <img src="../img/qr-pagos.svg" alt="QR Pagos" style="width:200px; height:200px; margin:0 auto 10px; display:block;">
+            <p><strong>Nequi / Bancolombia:</strong> 302 336 4534</p>
+        
+        </div>
+    </section>
+
+    <!-- Empresa (Misión y Visión) -->
+    <section id="empresa" class="container">
+        <h2 class="section-title">Sobre Nosotros</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+            <div style="background:white; padding:30px; border-radius:16px; border:1px solid #e2e8f0; text-align:center;">
+                <i class="fas fa-bullseye" style="font-size:2rem; color:var(--primary); margin-bottom:12px;"></i>
+                <h3 style="margin-bottom:8px;">Misión</h3>
+                <p style="color:#64748b;">Brindar una experiencia gastronómica auténtica a través de la más alta calidad en cada arepa, con ingredientes frescos y sazón tradicional.</p>
+            </div>
+            <div style="background:white; padding:30px; border-radius:16px; border:1px solid #e2e8f0; text-align:center;">
+                <i class="fas fa-eye" style="font-size:2rem; color:var(--primary); margin-bottom:12px;"></i>
+                <h3 style="margin-bottom:8px;">Visión</h3>
+                <p style="color:#64748b;">Consolidarnos como el lugar ideal para los amantes de la comida tradicional paisa, reconocidos por nuestro sabor y servicio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo: 5 Integrantes en 1 Fila y Todos Iguales -->
+    <section id="equipo" class="container">
+        <h2 class="section-title">Los Areperos</h2>
+        <div class="team-grid-5">
+            <div class="team-card"><div class="team-avatar">MC</div><h4>Mathias Cardona</h4><p>Finanzas y RR.EE.</p></div>
+            <div class="team-card"><div class="team-avatar">IG</div><h4>Isabella Giraldo</h4><p>Producción y Calidad</p></div>
+            <div class="team-card"><div class="team-avatar">SP</div><h4>Samuel Pérez</h4><p>Logística y Suministros</p></div>
+            <div class="team-card"><div class="team-avatar">JM</div><h4>Juan M. Montoya</h4><p>Marketing y RR.PP.</p></div>
+            <div class="team-card"><div class="team-avatar">SO</div><h4>Samuel Ortega</h4><p>Director Corporativo</p></div>
+        </div>
+    </section>
+
+    <!-- Redes Sociales al Final de la Página -->
+    <section class="social-bottom-section">
+        <h3>📱 Conéctate con La Arepa de Checho</h3>
+        <p>Síguenos en nuestras redes sociales para conocer novedades y promociones:</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="soc-item ig"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="soc-item tk"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://wa.me/573023364534" target="_blank" rel="noopener noreferrer" class="soc-item lt"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Modal del Carrito con Adicionales y Formulario para BD -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('cart-modal')">&times;</span>
+            <h2 style="margin-bottom:12px; color:var(--dark);">🛒 Tu Pedido</h2>
+            <div id="cart-list" class="cart-list"></div>
+
+            <!-- Adicionales en el Carrito -->
+            <div class="cart-upsell-section">
+                <div style="font-size:0.85rem; font-weight:bold; color:var(--primary); margin-bottom:8px;">
+                    ✨ ¿Deseas añadir adicionales a tu pedido?
+                </div>
+                <div class="cart-upsell-grid">
+                    <div class="cart-upsell-item">
+                        <span>Gaseosa (+$2.500)</span>
+                        <button class="btn-upsell-add" onclick="addToCart('gaseosa', 1)">+ Añadir</button>
+                    </div>
+                    <div class="cart-upsell-item">
+                        <span>Queso Extra (+$2.000)</span>
+                        <button class="btn-upsell-add" onclick="addToCart('queso-extra', 1)">+ Añadir</button>
+                    </div>
+                    <div class="cart-upsell-item">
+                        <span>Tocineta (+$3.000)</span>
+                        <button class="btn-upsell-add" onclick="addToCart('tocineta', 1)">+ Añadir</button>
+                    </div>
+                    <div class="cart-upsell-item">
+                        <span>Hogao (+$1.000)</span>
+                        <button class="btn-upsell-add" onclick="addToCart('hogao', 1)">+ Añadir</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario Obligatorio de Cliente para la Base de Datos -->
+            <div class="cart-client-form">
+                <div class="cart-input-group">
+                    <label>Tu Nombre Completo *:</label>
+                    <input type="text" id="cliente-nombre" name="nombre" placeholder="Ej. Mateo Gómez">
+                </div>
+                <div class="cart-input-group">
+                    <label>Número de Teléfono / WhatsApp *:</label>
+                    <input type="tel" id="cliente-numero" name="numero" placeholder="Ej. 310 456 7890">
+                </div>
+                <div class="cart-input-group">
+                    <label>Dirección de Entrega *:</label>
+                    <input type="text" id="cliente-direccion" name="direccion" placeholder="Ej. Calle 10 # 40-20">
+                </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                <strong>Total a Pagar:</strong>
+                <strong id="total-price" style="font-size:1.4rem; color:var(--primary);">$0</strong>
+            </div>
+
+            <button class="btn-wa" onclick="sendToWhatsApp()">
+                <i class="fab fa-whatsapp"></i> PEDIR POR WHATSAPP
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Detalles -->
+    <div id="details-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('details-modal')">&times;</span>
+            <div id="details-view"></div>
+        </div>
+    </div>
+
+    <!-- Chat Emergente -->
+    <div class="chat-wrapper">
+        <div id="chat-window" class="chat-window">
+            <p style="margin-bottom:10px; font-size:0.88rem;">¡Hola! Escríbenos a WhatsApp para tomar tu orden:</p>
+            <a href="https://wa.me/573023364534" target="_blank" rel="noopener noreferrer" class="btn-wa" style="text-decoration:none; padding:10px;">Abrir Chat</a>
+        </div>
+        <button class="chat-toggle" onclick="toggleChat()"><i class="fab fa-whatsapp"></i></button>
+    </div>
+
+    <script src="arepa.js"></script>
+</body>
+</html>
